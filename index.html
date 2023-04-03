@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar-top">
+        <div class="navigation">
+          <div class="nav-item">
+            <div class="step-indicator" id="btn-1">1</div>
+            <div class="nav-item-info">
+              <span>STEP 1</span><span>YOUR INFO</span>
+            </div>
+          </div>
+          <div class="nav-item">
+            <div class="step-indicator" id="btn-2">2</div>
+            <div class="nav-item-info">
+              <span>STEP 2</span><span>SELECT PLAN</span>
+            </div>
+          </div>
+          <div class="nav-item">
+            <div class="step-indicator" id="btn-3">3</div>
+            <div class="nav-item-info">
+              <span>STEP 3</span><span>ADD-ONS</span>
+            </div>
+          </div>
+          <div class="nav-item">
+            <div class="step-indicator" id="btn-4">4</div>
+            <div class="nav-item-info">
+              <span>STEP 4</span><span>SUMMARY</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="middle-container">
+        <main class="get-info" id="step-1">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address, and phone number.</p>
+          <form>
+            <div class="input-section">
+              <div style="display: flex; justify-content: space-between">
+                <label for="name">Name</label>
+                <span id="name-err-msg"></span>
+              </div>
+              <input
+                autocomplete="off"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="e.g. Stephen King"
+              />
+            </div>
+            <div class="input-section">
+              <div style="display: flex; justify-content: space-between">
+                <label for="email">Email Address</label>
+                <span id="email-err-msg"></span>
+              </div>
+              <input
+                autocomplete="off"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+              />
+            </div>
+            <div class="input-section">
+              <div style="display: flex; justify-content: space-between">
+                <label for="tel">Phone Number</label>
+                <span id="tel-err-msg"></span>
+              </div>
+              <input
+                autocomplete="off"
+                id="tel"
+                name="tel"
+                type="tel"
+                placeholder="e.g. +1 234 567 890"
+              />
+            </div>
+          </form>
+        </main>
+        <main class="select-plan" id="step-2">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
+          <button id="arcade" class="plan-selection-container">
+            <img src="./assets/images/icon-arcade.svg" alt="arcade console" />
+            <div class="plan-info">
+              <h2>Arcade</h2>
+              <span class="price" id="arcade-price">$9/mo</span>
+              <span class="months-free">2 months free</span>
+            </div>
+          </button>
+          <button id="advanced" class="plan-selection-container">
+            <img src="./assets/images/icon-advanced.svg" alt="gamepad" />
+            <div class="plan-info">
+              <h2>Advanced</h2>
+              <span class="price" id="advanced-price">$12/mo</span>
+              <span class="months-free">2 months free</span>
+            </div>
+          </button>
+          <button id="pro" class="plan-selection-container">
+            <img src="./assets/images/icon-pro.svg" alt="modern gamepad" />
+            <div class="plan-info">
+              <h2>Pro</h2>
+              <span class="price" id="pro-price">$15/mo</span>
+              <span class="months-free">2 months free</span>
+            </div>
+          </button>
+          <div class="payment-switch">
+            <span id="monthly">Monthly</span>
+            <button class="switch">
+              <div class="switch-circle"></div>
+            </button>
+            <span id="yearly">Yearly</span>
+          </div>
+        </main>
+        <main class="pick-addons" id="step-3">
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+          <button
+            id="online-service"
+            type="checkbox"
+            class="check-box-container"
+          >
+            <div class="addon-group">
+              <div class="check-box">
+                <img
+                  src="./assets/images/icon-checkmark.svg"
+                  alt="check-box icon"
+                />
+              </div>
+              <div class="addon-info">
+                <h2>Online Service</h2>
+                <p>Access to multiplayer games</p>
+              </div>
+            </div>
+            <span id="online-service-pricing"></span>
+          </button>
+          <button
+            id="larger-storage"
+            type="checkbox"
+            class="check-box-container"
+          >
+            <div class="addon-group">
+              <div class="check-box">
+                <img
+                  src="./assets/images/icon-checkmark.svg"
+                  alt="check-box icon"
+                />
+              </div>
+              <div class="addon-info">
+                <h2>Larger storage</h2>
+                <p>Extra 1TB of cloud save</p>
+              </div>
+            </div>
+            <span id="larger-storage-pricing"></span>
+          </button>
+          <button
+            id="custom-profile"
+            type="checkbox"
+            class="check-box-container"
+          >
+            <div class="addon-group">
+              <div class="check-box">
+                <img
+                  src="./assets/images/icon-checkmark.svg"
+                  alt="check-box icon"
+                />
+              </div>
+              <div class="addon-info">
+                <h2>Customizable Profile</h2>
+                <p>Custom theme on your profile</p>
+              </div>
+            </div>
+            <span id="custom-profile-pricing"></span>
+          </button>
+        </main>
+        <main class="finishing-up" id="step-4">
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming.</p>
+          <div class="summary">
+            <div class="plan-summary">
+              <div class="plan-summary-info">
+                <h2></h2>
+                <button id="change-plan">Change</button>
+              </div>
+              <span class="plan-summary-price"></span>
+            </div>
+            <hr />
+            <div id="online-service-sum" class="addon-summary">
+              <h3>Online service</h3>
+              <span></span>
+            </div>
+            <div id="larger-storage-sum" class="addon-summary">
+              <h3>Larger storage</h3>
+              <span></span>
+            </div>
+            <div id="custom-profile-sum" class="addon-summary">
+              <h3>Custom profile</h3>
+              <span></span>
+            </div>
+          </div>
+          <div class="total-container">
+            <span id="total-text"></span>
+            <span id="total-price"></span>
+          </div>
+        </main>
+        <main class="thank-you" id="step-5">
+          <div class="success">
+            <img src="./assets/images/icon-thank-you.svg" alt="Success Icon" />
+            <h1>Thank you!</h1>
+            <p>
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </div>
+        </main>
+      </section>
+      <nav class="navbar-bottom">
+        <button id="btn-go-back">Go Back</button>
+        <button id="btn-next-step">Next Step</button>
+      </nav>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
