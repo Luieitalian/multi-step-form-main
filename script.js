@@ -245,9 +245,9 @@ selectMonthly();
 function setSwitchPosition() {
   if (window.innerWidth > 768 && window.innerWidth < 1200) {
     paymentSwitchCircle.style.bottom = '10px';
-  } else if(window.innerWidth > 1200) {
-    
-  }else {
+  } else if (window.innerWidth > 1200) {
+    paymentSwitchCircle.style.bottom = '5px';
+  } else {
     paymentSwitchCircle.style.bottom = '5px';
   }
 }

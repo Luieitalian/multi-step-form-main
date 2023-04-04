@@ -154,9 +154,14 @@ p {
 .navbar-bottom {
   background-color: var(--clr-alabaster);
   display: flex;
+}
+
+.navbar-bottom-wrapper {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  width: 100%;
+  margin: 0 1rem;
 }
 
 #btn-next-step {
@@ -229,6 +234,11 @@ p {
   border-radius: 10px;
   cursor: pointer;
   margin-bottom: 8px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .plan-selection-container:hover {
@@ -572,6 +582,66 @@ p {
 }
 
 @media (min-width: 1200px) {
+  .input-section label,
+  .input-section span {
+    font-size: var(--fs-big);
+  }
+  .input-section input {
+    font-size: var(--fs-big);
+  }
+
+  #btn-go-back,
+  #btn-next-step {
+    font-size: var(--fs-big);
+  }
+  .plan-selection-container img {
+    width: 60px;
+  }
+  .plan-info h2 {
+    font-size: var(--fs-large);
+  }
+  .plan-info .price {
+    font-size: var(--fs-big);
+  }
+  .plan-info .months-free {
+    font-size: var(--fs-big);
+  }
+  .payment-switch span {
+    font-size: var(--fs-large);
+  }
+  .check-box-container span {
+    font-size: var(--fs-large);
+  }
+  .addon-info h2 {
+    font-size: var(--fs-big);
+  }
+  .addon-info p {
+    font-size: var(--fs-normal);
+  }
+  .check-box-container span {
+    font-size: var(--fs-normal);
+  }
+  .plan-summary-info h2 {
+    font-size: var(--fs-large);
+  }
+  .plan-summary-info button {
+    font-size: var(--fs-normal);
+  }
+  .plan-summary span {
+    font-size: var(--fs-big);
+  }
+  .addon-summary h3 {
+    font-size: var(--fs-normal);
+  }
+  .addon-summary span {
+    font-size: var(--fs-normal);
+  }
+  #total-text {
+    font-size: var(--fs-normal);
+  }
+  #total-price {
+    font-size: var(--fs-big);
+  }
   body {
     display: grid;
     min-height: 100vh;
@@ -579,25 +649,88 @@ p {
     background-color: var(--clr-magnolia);
   }
   .container {
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    min-width: 90%;
+    padding: 1rem;
     min-height: auto;
     border-radius: 1rem;
-    padding: 1rem;
     background-color: var(--clr-white);
     grid-template-rows: 8fr 1fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 2fr 5fr;
     grid-template-areas:
       'navbartop middlecontainer'
       'navbartop navbarbottom';
   }
+  .plan-selection-container {
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 170px;
+  }
+  .plan-selection-container img {
+    width: 50px;
+  }
+  .button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .payment-switch span {
+    font-size: var(--fs-normal);
+  }
   .navbar-top {
     grid-area: navbartop;
+    justify-content: center;
+    align-items: start;
+    border-radius: 1rem;
+    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+  }
+  .navigation {
+    position: static;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 3rem;
+    margin-right: 2rem;
+  }
+  .nav-item-info {
+    display: flex;
+  }
+  .nav-item-info span:first-child {
+    color: var(--clr-lightgray);
+    font-size: var(--fs-light);
+    margin-left: 10px;
+    margin-bottom: 3px;
+  }
+  .nav-item-info span:last-child {
+    color: var(--clr-white);
+    font-weight: var(--fw-bold);
+    letter-spacing: 1px;
+    margin-left: 10px;
   }
   .navbar-bottom {
     grid-area: navbarbottom;
+    justify-content: center;
+  }
+  .navbar-bottom-wrapper {
+    width: 35rem;
+    margin: 0;
   }
   .middle-container {
     grid-area: middlecontainer;
+    background-color: var(--clr-white);
+  }
+  main {
+    position: static;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    width: 35rem;
+  }
+  main h1 {
+    font-size: var(--fs-gorgeous);
+  }
+  main form {
+    margin-top: 3rem;
   }
 }

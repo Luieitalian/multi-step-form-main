@@ -98,30 +98,32 @@
         <main class="select-plan" id="step-2">
           <h1>Select your plan</h1>
           <p>You have the option of monthly or yearly billing.</p>
-          <button id="arcade" class="plan-selection-container">
-            <img src="./assets/images/icon-arcade.svg" alt="arcade console" />
-            <div class="plan-info">
-              <h2>Arcade</h2>
-              <span class="price" id="arcade-price">$9/mo</span>
-              <span class="months-free">2 months free</span>
-            </div>
-          </button>
-          <button id="advanced" class="plan-selection-container">
-            <img src="./assets/images/icon-advanced.svg" alt="gamepad" />
-            <div class="plan-info">
-              <h2>Advanced</h2>
-              <span class="price" id="advanced-price">$12/mo</span>
-              <span class="months-free">2 months free</span>
-            </div>
-          </button>
-          <button id="pro" class="plan-selection-container">
-            <img src="./assets/images/icon-pro.svg" alt="modern gamepad" />
-            <div class="plan-info">
-              <h2>Pro</h2>
-              <span class="price" id="pro-price">$15/mo</span>
-              <span class="months-free">2 months free</span>
-            </div>
-          </button>
+          <div class="button-wrapper">
+            <button id="arcade" class="plan-selection-container">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade console" />
+              <div class="plan-info">
+                <h2>Arcade</h2>
+                <span class="price" id="arcade-price">$9/mo</span>
+                <span class="months-free">2 months free</span>
+              </div>
+            </button>
+            <button id="advanced" class="plan-selection-container">
+              <img src="./assets/images/icon-advanced.svg" alt="gamepad" />
+              <div class="plan-info">
+                <h2>Advanced</h2>
+                <span class="price" id="advanced-price">$12/mo</span>
+                <span class="months-free">2 months free</span>
+              </div>
+            </button>
+            <button id="pro" class="plan-selection-container">
+              <img src="./assets/images/icon-pro.svg" alt="modern gamepad" />
+              <div class="plan-info">
+                <h2>Pro</h2>
+                <span class="price" id="pro-price">$15/mo</span>
+                <span class="months-free">2 months free</span>
+              </div>
+            </button>
+          </div>
           <div class="payment-switch">
             <span id="monthly">Monthly</span>
             <button class="switch">
@@ -234,8 +236,10 @@
         </main>
       </section>
       <nav class="navbar-bottom">
-        <button id="btn-go-back">Go Back</button>
-        <button id="btn-next-step">Next Step</button>
+        <div class="navbar-bottom-wrapper">
+          <button id="btn-go-back">Go Back</button>
+          <button id="btn-next-step">Next Step</button>
+        </div>
       </nav>
     </div>
     <script src="script.js"></script>
