@@ -1,4 +1,4 @@
-//#region GET ELEMENTS
+//#region GET ELEMENTS & DEFINE VARIABLES
 
 const STEPS = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
 const PLANS = ['arcade', 'advanced', 'pro'];
