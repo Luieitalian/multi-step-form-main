@@ -104,13 +104,13 @@ btnNextStep.addEventListener('click', () => {
   setSwitchPosition();
   switch (CURRENT_STEP) {
     case 0:
-      validationStep1() ? increaseCurrentStep() : null;
+      true ? increaseCurrentStep() : null;
       break;
     case 1:
-      validationStep2() ? increaseCurrentStep() : null;
+      true ? increaseCurrentStep() : null;
       break;
     case 2:
-      validationStep3() ? increaseCurrentStep() : null;
+      true ? increaseCurrentStep() : null;
       break;
     case 3:
       true ? increaseCurrentStep() : null;
