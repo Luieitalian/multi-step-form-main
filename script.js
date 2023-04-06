@@ -1,3 +1,5 @@
+//#region GET ELEMENTS
+
 const STEPS = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
 const PLANS = ['arcade', 'advanced', 'pro'];
 const PAYMENT_METHODS = ['monthly', 'yearly'];
@@ -73,12 +75,8 @@ const btnGoBack = document.getElementById('btn-go-back');
 const changePlan = document.querySelector('#change-plan');
 const navbarBottom = document.querySelector('.navbar-bottom');
 
-changePlan.addEventListener('click', () => {
-  CURRENT_STEP = 1;
-  switchStepView();
-  switchNavStepIndicator();
-});
-
+//#endregion
+//#region MANAGING NAVIGATION
 function switchStepView() {
   mainElements.forEach((el) => {
     el.getAttribute('id') === STEPS[CURRENT_STEP]
@@ -102,8 +100,55 @@ function switchNavStepIndicator() {
   });
 }
 switchNavStepIndicator();
+btnNextStep.addEventListener('click', () => {
+  setSwitchPosition();
+  switch (CURRENT_STEP) {
+    case 0:
+      true ? increaseCurrentStep() : null;
+      break;
+    case 1:
+      true ? increaseCurrentStep() : null;
+      break;
+    case 2:
+      true ? increaseCurrentStep() : null;
+      break;
+    case 3:
+      true ? increaseCurrentStep() : null;
+      break;
+  }
+});
 
-// STEP 1
+btnGoBack.addEventListener('click', () => {
+  decreaseCurrentStep();
+});
+
+function increaseCurrentStep() {
+  if (CURRENT_STEP === 3) {
+    CURRENT_STEP += 1;
+    switchStepView();
+    navbarBottom.style.display = 'none';
+  } else if (!(CURRENT_STEP > 3)) {
+    CURRENT_STEP += 1;
+    btnGoBack.style.visibility = 'visible';
+    switchStepView();
+    switchNavStepIndicator();
+  }
+}
+
+function decreaseCurrentStep() {
+  if (CURRENT_STEP === 1) {
+    btnGoBack.style.visibility = 'hidden';
+    CURRENT_STEP -= 1;
+    switchStepView();
+    switchNavStepIndicator();
+  } else if (!(CURRENT_STEP <= 0)) {
+    CURRENT_STEP -= 1;
+    switchStepView();
+    switchNavStepIndicator();
+  }
+}
+//#endregion
+//#region STEP 1
 
 function validateName() {
   if (
@@ -189,9 +234,8 @@ telInput.addEventListener('focus', () => {
   telInput.classList.remove('red-border');
 });
 
-//
-
-// STEP 2
+//#endregion
+//#region STEP 2
 
 function resetSelection() {
   planSelectionBtns.forEach((btn) => {
@@ -308,7 +352,8 @@ function validationStep2() {
   }
 }
 
-// STEP 3
+//#endregion
+//#region STEP 3
 
 function capitalize(str) {
   return `${str[0].toUpperCase()}${str.substring(1)}`;
@@ -415,8 +460,8 @@ function validationStep3() {
   });
   return true;
 }
-
-// STEP 4
+//#endregion
+//#region STEP 4
 
 function resetSummary() {
   addonSummaries.forEach((addon) => {
@@ -424,7 +469,11 @@ function resetSummary() {
   });
   hr.style.display = 'none';
 }
-
+changePlan.addEventListener('click', () => {
+  CURRENT_STEP = 1;
+  switchStepView();
+  switchNavStepIndicator();
+});
 resetSummary();
 function renderPickedAddons() {
   if (pickedAddons.includes('online-service')) {
@@ -449,53 +498,4 @@ function renderPickedAddons() {
     hr.style.display = 'none';
   }
 }
-
-// General Stuff
-
-btnNextStep.addEventListener('click', () => {
-  setSwitchPosition();
-  switch (CURRENT_STEP) {
-    case 0:
-      true ? increaseCurrentStep() : null;
-      break;
-    case 1:
-      true ? increaseCurrentStep() : null;
-      break;
-    case 2:
-      true ? increaseCurrentStep() : null;
-      break;
-    case 3:
-      true ? increaseCurrentStep() : null;
-      break;
-  }
-});
-
-btnGoBack.addEventListener('click', () => {
-  decreaseCurrentStep();
-});
-
-function increaseCurrentStep() {
-  if (CURRENT_STEP === 3) {
-    CURRENT_STEP += 1;
-    switchStepView();
-    navbarBottom.style.display = 'none';
-  } else if (!(CURRENT_STEP > 3)) {
-    CURRENT_STEP += 1;
-    btnGoBack.style.visibility = 'visible';
-    switchStepView();
-    switchNavStepIndicator();
-  }
-}
-
-function decreaseCurrentStep() {
-  if (CURRENT_STEP === 1) {
-    btnGoBack.style.visibility = 'hidden';
-    CURRENT_STEP -= 1;
-    switchStepView();
-    switchNavStepIndicator();
-  } else if (!(CURRENT_STEP <= 0)) {
-    CURRENT_STEP -= 1;
-    switchStepView();
-    switchNavStepIndicator();
-  }
-}
+//#endregion
