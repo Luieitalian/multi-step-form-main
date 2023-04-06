@@ -7,6 +7,7 @@ const ADDONS = ['online-service', 'larger-storage', 'custom-profile'];
 let pickedAddons = [];
 let selectedPlan = 'arcade';
 let CURRENT_STEP = 0;
+let _totalPrice = 0;
 let paymentMethod = 'monthly';
 
 const nameInput = document.getElementById('name');
@@ -41,7 +42,6 @@ const customProfileSumPricing = document.querySelector(
 
 const totalText = document.querySelector('#total-text');
 const totalPrice = document.querySelector('#total-price');
-let _totalPrice = 0;
 
 const planSummaryH2 = document.querySelector('.plan-summary-info h2');
 const planSummaryPrice = document.querySelector('.plan-summary-price');
@@ -104,13 +104,13 @@ btnNextStep.addEventListener('click', () => {
   setSwitchPosition();
   switch (CURRENT_STEP) {
     case 0:
-      true ? increaseCurrentStep() : null;
+      validationStep1() ? increaseCurrentStep() : null;
       break;
     case 1:
-      true ? increaseCurrentStep() : null;
+      validationStep2() ? increaseCurrentStep() : null;
       break;
     case 2:
-      true ? increaseCurrentStep() : null;
+      validationStep3() ? increaseCurrentStep() : null;
       break;
     case 3:
       true ? increaseCurrentStep() : null;
